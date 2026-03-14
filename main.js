@@ -62,7 +62,9 @@ document.addEventListener('keydown', function (e) {
 });
 
 // ── PRICE CALCULATOR ──
-var RATE = 320;
+var RATE = 210;
+var CLEANING_FEE = 60;
+var SECURITY_DEPOSIT = 500;
 
 function calcPrice() {
   var ci = document.getElementById('checkin');
@@ -79,14 +81,16 @@ function calcPrice() {
   }
 
   var sub = nights * RATE;
-  var tot = sub - disc;
+  var tot = sub - disc + CLEANING_FEE;
 
   document.getElementById('priceBox').style.display = 'block';
   document.getElementById('prNightly').textContent  = '$' + RATE + '/night';
   document.getElementById('prNights').textContent   = nights + ' night' + (nights !== 1 ? 's' : '');
   document.getElementById('prSubtotal').textContent = '$' + sub.toLocaleString();
+  document.getElementById('prCleaning').textContent = '$' + CLEANING_FEE;
   document.getElementById('prTotal').textContent    = '$' + tot.toLocaleString();
   document.getElementById('prDeposit').textContent  = '$' + Math.round(tot * 0.5).toLocaleString();
+  document.getElementById('prSecurity').textContent  = '$' + SECURITY_DEPOSIT.toLocaleString();
   document.getElementById('prSavings').textContent  = '~$' + Math.round(tot * 0.18).toLocaleString();
 
   var discRow = document.getElementById('discRow');
@@ -99,9 +103,52 @@ function calcPrice() {
   }
 }
 
-// ── BOOKING SUBMIT ──
-function submitBooking(e) {
-  e.preventDefault();
-  // Connect to Tally form — open in same tab so user completes booking there
-  window.location.href = 'https://tally.so/r/Ek0qdA';
-}
+// ── BOOKING SUBMIT (stays on page, no redirect) ──
+// Replace with your Formspree form ID from https://formspree.io (e.g. formspree.io/f/xyzabc → use xyzabc)
+var BOOKING_FORM_ENDPOINT = 'https://formspree.io/f/mvzwbopj';
+
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('bookingForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('bookingSubmitBtn');
+    var errEl = document.getElementById('bookingError');
+    var thankYou = document.getElementById('bookingThankYou');
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    var data = {};
+    var names = ['first_name', 'last_name', 'email', 'phone', 'check_in', 'check_out', 'guests', 'how_heard', 'special_requests'];
+    names.forEach(function (name) {
+      var input = form.querySelector('[name="' + name + '"]');
+      if (input && input.value) data[name] = input.value.trim();
+    });
+    var prTotal = document.getElementById('prTotal');
+    var prDeposit = document.getElementById('prDeposit');
+    var prSecurity = document.getElementById('prSecurity');
+    if (prTotal && prTotal.textContent) data.estimated_total = prTotal.textContent;
+    if (prDeposit && prDeposit.textContent) data.deposit = prDeposit.textContent;
+    if (prSecurity && prSecurity.textContent) data.security_deposit = prSecurity.textContent;
+    fetch(BOOKING_FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          if (thankYou) thankYou.style.display = 'block';
+        } else {
+          throw new Error('Something went wrong. Please try again or email contact@casadecorona.com');
+        }
+      })
+      .catch(function (err) {
+        if (errEl) {
+          errEl.textContent = err.message || 'Could not send. Please email contact@casadecorona.com';
+          errEl.style.display = 'block';
+        }
+        if (btn) { btn.disabled = false; btn.textContent = 'Submit Booking Request →'; }
+      });
+    return false;
+  });
+});

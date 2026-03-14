@@ -1,0 +1,32 @@
+How to connect your booking form to Formspree
+=============================================
+
+Step 1 — Sign up
+   • Open https://formspree.io in your browser.
+   • Click "Get started" and create a free account (email or Google).
+
+Step 2 — Create a form
+   • After logging in, click "New form".
+   • Give it a name (e.g. "Casa de Corona Booking").
+   • Click "Create form".
+
+Step 3 — Copy your form address
+   • On the form page you'll see something like:
+     "Your form endpoint: https://formspree.io/f/xyzabc12"
+   • Copy the full URL (or just the part after /f/ — e.g. xyzabc12).
+
+Step 4 — Paste it into your website
+   • Open the file: casa-de-corona/main.js
+   • Find this line (near the top of the booking section):
+     var BOOKING_FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+   • Replace YOUR_FORM_ID with your form ID.
+   • Example: if Formspree gave you https://formspree.io/f/mzbqnpzw
+     then change the line to:
+     var BOOKING_FORM_ENDPOINT = 'https://formspree.io/f/mzbqnpzw';
+   • Save the file.
+
+Step 5 — Test it
+   • Open your site, go to the Book Direct section, fill out the form, and submit.
+   • You should see "Thank you!" on the page and get an email from Formspree with the submission.
+
+Done. New booking requests will go to your Formspree dashboard and to the email you used to sign up (you can change this in Formspree settings).

@@ -28,8 +28,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 .cards-section-wrap { max-width: 1100px; margin: 0 auto; }
 .dest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
 .dest-card { display: block; background: rgba(255,255,255,.05); border: 1px solid rgba(200,168,75,.25); border-radius: 4px; overflow: hidden; color: #fff; text-decoration: none; }
-.dest-card-img { height: 260px; overflow: hidden; position: relative; background: #0e1f3a; }
-.dest-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dest-card-img { overflow: hidden; position: relative; background: #0e1f3a; }
+.dest-card-img img { width: 100%; height: auto; display: block; vertical-align: top; }
 .dest-tag { position: absolute; top: 1rem; left: 1rem; background: #C8A84B; color: #0a1628; font-size: .65rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .7rem; border-radius: 2px; }
 .dest-body { padding: 1.8rem; }
 .dest-body h3 { font-size: 1.6rem; margin-bottom: .6rem; }
@@ -169,22 +169,26 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
       </div>
     </div>
     <div>
-      <form class="bform" onsubmit="submitBooking(event)">
+      <div id="bookingThankYou" style="display:none;padding:2rem;background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.3);border-radius:6px;text-align:center">
+        <p style="font-size:1.25rem;color:var(--gold);margin-bottom:.5rem">Thank you!</p>
+        <p style="color:rgba(255,255,255,.9);margin:0">Your booking request has been sent. We'll confirm within 24 hours.</p>
+      </div>
+      <form class="bform" id="bookingForm">
         <div class="frow">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="Maria" required></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Garcia" required></div>
+          <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="Maria" required></div>
+          <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Garcia" required></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Email</label><input type="email" placeholder="maria@example.com" required></div>
-          <div class="fg"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
+          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="maria@example.com" required></div>
+          <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000"></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Check-in Date</label><input type="date" id="checkin" required onchange="calcPrice()"></div>
-          <div class="fg"><label>Check-out Date</label><input type="date" id="checkout" required onchange="calcPrice()"></div>
+          <div class="fg"><label>Check-in Date</label><input type="date" name="check_in" id="checkin" required onchange="calcPrice()"></div>
+          <div class="fg"><label>Check-out Date</label><input type="date" name="check_out" id="checkout" required onchange="calcPrice()"></div>
         </div>
         <div class="fg">
           <label>Number of Guests</label>
-          <select id="guests" required>
+          <select name="guests" id="guests" required>
             <option value="">Select guests</option>
             <option>1</option><option>2</option><option>3</option><option>4</option>
             <option>5</option><option>6</option><option>7</option><option>8</option>
@@ -194,13 +198,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
           <div class="pr"><span>Nightly rate</span><span class="pv" id="prNightly">—</span></div>
           <div class="pr"><span id="prNights">Nights</span><span class="pv" id="prSubtotal">—</span></div>
           <div class="pr sav" id="discRow" style="display:none"><span id="discLabel"></span><span id="discAmt"></span></div>
+          <div class="pr"><span>Cleaning fee</span><span class="pv" id="prCleaning">—</span></div>
           <div class="pr tot"><span>Total (before taxes)</span><span class="pv" id="prTotal">—</span></div>
           <div class="pr"><span>50% deposit to confirm</span><span class="pv" id="prDeposit">—</span></div>
+          <div class="pr"><span>Refundable security deposit</span><span class="pv" id="prSecurity">—</span></div>
           <div class="pr sav"><span>Savings vs. Airbnb (~18%)</span><span id="prSavings">—</span></div>
         </div>
         <div class="fg">
           <label>How Did You Hear About Us?</label>
-          <select>
+          <select name="how_heard">
             <option value="">Select...</option>
             <option>Airbnb / Previous Guest</option>
             <option>Friend / Family Referral</option>
@@ -209,12 +215,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
             <option>Other</option>
           </select>
         </div>
-        <div class="fg"><label>Special Requests</label><textarea placeholder="Late check-in, celebrations, dietary needs..."></textarea></div>
+        <div class="fg"><label>Special Requests</label><textarea name="special_requests" placeholder="Late check-in, celebrations, dietary needs..."></textarea></div>
         <div class="agr-row">
-          <input type="checkbox" required>
+          <input type="checkbox" name="agreed" required>
           <p class="agr">This is a <strong>booking request</strong>, not a confirmed reservation. We confirm availability within 24 hours. No payment until confirmation.</p>
         </div>
-        <button type="submit" class="btn-gold" style="width:100%;margin-top:.5rem">Submit Booking Request →</button>
+        <button type="submit" class="btn-gold" id="bookingSubmitBtn" style="width:100%;margin-top:.5rem">Submit Booking Request →</button>
+        <p id="bookingError" style="display:none;color:#e74c3c;margin-top:.75rem;font-size:.9rem"></p>
       </form>
       <div class="cal-note">📅 Calendar synced with Airbnb. Questions? Email <strong>contact@casadecorona.com</strong></div>
     </div>
@@ -359,7 +366,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
     <div class="dest-grid">
       <a href="san-jose-del-cabo.html" class="dest-card">
         <div class="dest-card-img">
-          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/dining-room.jpg" alt="San José del Cabo" loading="lazy">
+          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/san_jose_del_cabo_text_added.png" alt="San José del Cabo" loading="lazy">
           <span class="dest-tag">25 min away</span>
         </div>
         <div class="dest-body">
@@ -370,7 +377,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
       </a>
       <a href="cabo-marina.html" class="dest-card">
         <div class="dest-card-img">
-          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/pool-birdseye.jpg" alt="Cabo Marina" loading="lazy">
+          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/cabo_san_lucas_marina_text_added.png" alt="Cabo Marina" loading="lazy">
           <span class="dest-tag">10 min away</span>
         </div>
         <div class="dest-body">
@@ -381,7 +388,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
       </a>
       <a href="chileno-bay.html" class="dest-card">
         <div class="dest-card-img">
-          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/breakfast-table.jpg" alt="Chileno Bay" loading="lazy">
+          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/chileno_bay_text_added.png" alt="Chileno Bay" loading="lazy">
           <span class="dest-tag">15 min away</span>
         </div>
         <div class="dest-body">
@@ -392,7 +399,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
       </a>
       <a href="palmilla-beach.html" class="dest-card">
         <div class="dest-card-img">
-          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/terrace-day.jpg" alt="Palmilla Beach" loading="lazy">
+          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/palmilla_beach_no_border.jpg" alt="Palmilla Beach" loading="lazy">
           <span class="dest-tag">20 min away</span>
         </div>
         <div class="dest-body">
@@ -403,7 +410,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
       </a>
       <a href="cabo-pulmo.html" class="dest-card">
         <div class="dest-card-img">
-          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/complex-aerial.jpg" alt="Cabo Pulmo" loading="lazy">
+          <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/cabo_pulmo_no_border.jpg" alt="Cabo Pulmo" loading="lazy">
           <span class="dest-tag">1.5 hrs east</span>
         </div>
         <div class="dest-body">

@@ -1,0 +1,17 @@
+Tally form pre-fill — one-time setup
+====================================
+When guests submit the booking form on your site, they are sent to your Tally form with their answers pre-filled so they don't have to type everything again. They only need to click Submit on Tally.
+
+For the pre-fill to work, add these as HIDDEN fields in your Tally form (form editor → type /hidden):
+
+  first_name
+  last_name
+  email
+  phone
+  check_in
+  check_out
+  guests
+  how_heard
+  special_requests
+
+Then, for each visible field that should show the guest’s answer, set its “Default answer” to use the matching hidden field. Tally help: https://tally.so/help/pre-populate-form-fields
