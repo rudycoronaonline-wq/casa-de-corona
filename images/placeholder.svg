@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect fill="#0e1f3a" width="1200" height="800"/>
+  <g fill="#C8A84B" font-family="system-ui,sans-serif" font-size="28" text-anchor="middle">
+    <text x="600" y="380">Add your photo here</text>
+    <text x="600" y="420" font-size="18" fill="rgba(255,255,255,0.5)">Drop image in images/ folder</text>
+  </g>
+</svg>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa de Corona — Direct Booking | Cabo San Lucas</title>
+<meta name="description" content="Book Casa de Corona direct and save up to 18% vs Airbnb. 3 bedrooms, ocean & Arch views, private terrace, resort pool. El Tezal, Cabo San Lucas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Casa de Corona</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#bedrooms">Rooms</a>
+    <a href="what-to-do.html">What To Do</a>
+    <a href="#location">Location</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#book" class="nav-cta">Book Direct</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div id="mobileNav" class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#bedrooms">Rooms</a>
+  <a href="what-to-do.html">What To Do</a>
+  <a href="#location">Location</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#book" class="nav-cta">Book Direct</a>
+</div>
+
+<div class="save-strip">✦ Book direct and <strong>save up to 18%</strong> vs. Airbnb — no platform fees, no middleman ✦</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <img src="images/terrace-sunset.jpg" alt="Casa de Corona terrace at sunset with hammock and ocean views" loading="eager">
+  <div class="hero-ov"></div>
+  <div class="hero-body">
+    <span class="eyebrow">El Tezal · Cabo San Lucas · Baja California Sur</span>
+    <h1>Three Bedrooms.<br>Ocean &amp; Arch Views.<br><em>All of Cabo at Your Door.</em></h1>
+    <p class="hero-sub">A private terrace with a hammock, margaritas at sunset, and a panoramic view of the Sea of Cortez — this is how Cabo was meant to be experienced.</p>
+    <div class="stats">
+      <div class="stat"><span class="stat-v">3</span><span class="stat-l">Bedrooms</span></div>
+      <div class="stat"><span class="stat-v">2</span><span class="stat-l">Bathrooms</span></div>
+      <div class="stat"><span class="stat-v">8</span><span class="stat-l">Guests</span></div>
+      <div class="stat"><span class="stat-v">5★</span><span class="stat-l">Rating</span></div>
+      <div class="stat"><span class="stat-v">$0</span><span class="stat-l">Platform Fees</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#book" class="btn-gold">Request to Book</a>
+      <a href="#gallery" class="btn-outline">View Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="sec" style="background:var(--navy)">
+  <span class="sec-label">The Property</span>
+  <h2 class="sec-title">Every View a Postcard</h2>
+  <div class="gw">
+
+    <div class="gfull" onclick="openLightbox(0)">
+      <img src="images/terrace-margaritas.jpg" alt="Margaritas and hammock on private terrace with ocean views" loading="lazy">
+      <div class="glbl">Margaritas &amp; hammock · ocean views · private terrace</div>
+    </div>
+
+    <div class="grow g4">
+      <div class="gc ht" onclick="openLightbox(1)"><img src="images/pool-aerial.jpg" alt="Resort pool with Arch views" loading="lazy"><div class="glbl">Resort pool · Arch views</div></div>
+      <div class="gc ht" onclick="openLightbox(2)"><img src="images/living-room.jpg" alt="Living room with panoramic ocean views" loading="lazy"><div class="glbl">Living room · ocean views</div></div>
+      <div class="gc ht" onclick="openLightbox(3)"><img src="images/master-bedroom.jpg" alt="Master suite king bedroom" loading="lazy"><div class="glbl">Master suite · king bed</div></div>
+      <div class="gc ht" onclick="openLightbox(4)"><img src="images/dining-room.jpg" alt="Dining room with Arch views" loading="lazy"><div class="glbl">Dining room · Arch views</div></div>
+    </div>
+
+    <div class="grow g2">
+      <div class="gc ht" onclick="openLightbox(5)"><img src="images/kitchen.jpg" alt="Gourmet kitchen with ocean views" loading="lazy"><div class="glbl">Gourmet kitchen · ocean views</div></div>
+      <div class="gc ht" onclick="openLightbox(6)"><img src="images/breakfast-table.jpg" alt="Outdoor dining with ocean view" loading="lazy"><div class="glbl">Outdoor dining · mornings with a view</div></div>
+    </div>
+
+    <div class="gfull" onclick="openLightbox(7)">
+      <img src="images/sunset.jpg" alt="Spectacular Cabo sunset from the terrace" loading="lazy">
+      <div class="glbl">Sunset from the terrace · every evening</div>
+    </div>
+
+    <div class="grow g3">
+      <div class="gc ht" onclick="openLightbox(8)"><img src="images/pool-birdseye.jpg" alt="Pool and tennis complex aerial" loading="lazy"><div class="glbl">Pool · tennis · playground</div></div>
+      <div class="gc ht" onclick="openLightbox(9)"><img src="images/building-sunset.jpg" alt="Casa de Corona building at sunset" loading="lazy"><div class="glbl">Casa de Corona · El Tezal</div></div>
+      <div class="gc ht" onclick="openLightbox(10)"><img src="images/terrace-day.jpg" alt="Private terrace with Arch views" loading="lazy"><div class="glbl">Private terrace · Arch views</div></div>
+    </div>
+
+    <div class="grow g2L">
+      <div class="gc hm" onclick="openLightbox(11)"><img src="images/playground.jpg" alt="Childrens playground and tennis courts" loading="lazy"><div class="glbl">Playground · tennis courts</div></div>
+      <div class="gc hm" onclick="openLightbox(12)"><img src="images/hallway.jpg" alt="Building hallway with elevator" loading="lazy"><div class="glbl">Unit 124 entrance · elevator</div></div>
+    </div>
+
+    <div class="grow g4">
+      <div class="gc hm" onclick="openLightbox(13)"><img src="images/desert-bedroom.jpg" alt="Desert room king bed" loading="lazy"><div class="glbl">Desert room · king bed</div></div>
+      <div class="gc hm" onclick="openLightbox(14)"><img src="images/family-bedroom.jpg" alt="Family suite queen and twin beds" loading="lazy"><div class="glbl">Family suite · queen + twins</div></div>
+      <div class="gc hm" onclick="openLightbox(15)"><img src="images/master-bath.jpg" alt="Master bathroom double vanity" loading="lazy"><div class="glbl">Master bath · double vanity</div></div>
+      <div class="gc hm" onclick="openLightbox(16)"><img src="images/bathroom-2.jpg" alt="Shared bathroom walk-in shower" loading="lazy"><div class="glbl">Shared bath · walk-in shower</div></div>
+    </div>
+
+    <div class="grow g3">
+      <div class="gc hm" onclick="openLightbox(17)"><img src="images/coffee-station.jpg" alt="Coffee station Cuisinart and kettle" loading="lazy"><div class="glbl">Coffee station · Cuisinart + kettle</div></div>
+      <div class="gc hm" onclick="openLightbox(18)"><img src="images/laundry.jpg" alt="LG washer dryer in unit" loading="lazy"><div class="glbl">In-unit laundry · LG washer/dryer</div></div>
+      <div class="gc hm" onclick="openLightbox(19)"><img src="images/complex-aerial.jpg" alt="Gated community aerial view" loading="lazy"><div class="glbl">Gated community · Cabo Arch visible</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <div class="lb-x" onclick="closeLightbox()">&#215;</div>
+  <div class="lb-num" id="lbNum"></div>
+  <div class="lb-p" onclick="lbNav(-1)">&#8249;</div>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-n" onclick="lbNav(1)">&#8250;</div>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<!-- BOOKING -->
+<section id="book" class="sec" style="background:var(--navy2)">
+  <div class="book-grid">
+    <div>
+      <span class="sec-label">Direct Booking</span>
+      <h2 class="sec-title">How It Works</h2>
+      <p class="sec-desc">No platform fees. No strangers handling your money. Just you, us, and the most direct path to your Cabo vacation.</p>
+      <div class="steps">
+        <div class="step"><div class="step-n">1</div><div class="step-t"><h4>Submit Your Request</h4><p>Fill out the form with your dates and group size. We'll confirm within 24 hours.</p></div></div>
+        <div class="step"><div class="step-n">2</div><div class="step-t"><h4>Receive Confirmation &amp; Invoice</h4><p>We reply with your total, a Stripe link for your 50% deposit, and your confirmation.</p></div></div>
+        <div class="step"><div class="step-n">3</div><div class="step-t"><h4>Balance Due 30 Days Before</h4><p>Remaining 50% collected 30 days prior. Check-in details sent the day before.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <form class="bform" onsubmit="submitBooking(event)">
+        <div class="frow">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="Maria" required></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Garcia" required></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Email</label><input type="email" placeholder="maria@example.com" required></div>
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Check-in Date</label><input type="date" id="checkin" required onchange="calcPrice()"></div>
+          <div class="fg"><label>Check-out Date</label><input type="date" id="checkout" required onchange="calcPrice()"></div>
+        </div>
+        <div class="fg">
+          <label>Number of Guests</label>
+          <select id="guests" required>
+            <option value="">Select guests</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </div>
+        <div class="price-box" id="priceBox" style="display:none">
+          <div class="pr"><span>Nightly rate</span><span class="pv" id="prNightly">—</span></div>
+          <div class="pr"><span id="prNights">Nights</span><span class="pv" id="prSubtotal">—</span></div>
+          <div class="pr sav" id="discRow" style="display:none"><span id="discLabel"></span><span id="discAmt"></span></div>
+          <div class="pr tot"><span>Total (before taxes)</span><span class="pv" id="prTotal">—</span></div>
+          <div class="pr"><span>50% deposit to confirm</span><span class="pv" id="prDeposit">—</span></div>
+          <div class="pr sav"><span>Savings vs. Airbnb (~18%)</span><span id="prSavings">—</span></div>
+        </div>
+        <div class="fg">
+          <label>How Did You Hear About Us?</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Airbnb / Previous Guest</option>
+            <option>Friend / Family Referral</option>
+            <option>Google Search</option>
+            <option>Social Media</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Special Requests</label><textarea placeholder="Late check-in, celebrations, dietary needs..."></textarea></div>
+        <div class="agr-row">
+          <input type="checkbox" required>
+          <p class="agr">This is a <strong>booking request</strong>, not a confirmed reservation. We confirm availability within 24 hours. No payment until confirmation.</p>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%;margin-top:.5rem">Submit Booking Request →</button>
+      </form>
+      <div class="cal-note">📅 Calendar synced with Airbnb. Questions? Email <strong>contact@casadecorona.com</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEDROOMS -->
+<section id="bedrooms" class="sec" style="background:var(--navy2)">
+  <span class="sec-label">Accommodations</span>
+  <h2 class="sec-title">Three Distinct Bedrooms</h2>
+  <div class="rooms">
+    <div class="room">
+      <div class="room-img"><img src="images/master-bedroom.jpg" alt="Master suite king bedroom" loading="lazy"></div>
+      <div class="room-body">
+        <div class="room-name">Master Suite</div>
+        <div class="room-tag">Bedroom 1 · King Bed</div>
+        <ul class="room-feats">
+          <li>King bed</li><li>Private en-suite bath</li><li>Air conditioning</li>
+          <li>Ceiling fan</li><li>Smart TV</li><li>Fireplace</li><li>Wardrobe</li>
+        </ul>
+      </div>
+    </div>
+    <div class="room">
+      <div class="room-img"><img src="images/desert-bedroom.jpg" alt="Desert room king bed" loading="lazy"></div>
+      <div class="room-body">
+        <div class="room-name">Desert Room</div>
+        <div class="room-tag">Bedroom 2 · King Bed</div>
+        <ul class="room-feats">
+          <li>King bed</li><li>Shared bathroom access</li><li>Air conditioning</li>
+          <li>Ceiling fan</li><li>Smart TV</li><li>Wardrobe</li>
+        </ul>
+      </div>
+    </div>
+    <div class="room">
+      <div class="room-img"><img src="images/family-bedroom.jpg" alt="Family suite queen and twin beds" loading="lazy"></div>
+      <div class="room-body">
+        <div class="room-name">Family Suite</div>
+        <div class="room-tag">Bedroom 3 · Sleeps 4</div>
+        <ul class="room-feats">
+          <li>1 Queen + 2 Twin beds</li><li>Shared bathroom access</li><li>Air conditioning</li>
+          <li>Ceiling fan</li><li>Smart TV</li><li>Wardrobe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities" class="sec" style="background:var(--navy)">
+  <span class="sec-label">What's Included</span>
+  <h2 class="sec-title">Everything You Need</h2>
+  <div class="amen">
+    <div class="am">🌊 Ocean &amp; Arch views</div>
+    <div class="am">🏊 Resort-style shared pool</div>
+    <div class="am">🍹 Private terrace &amp; BBQ</div>
+    <div class="am">🍳 Full kitchen</div>
+    <div class="am">☕ Coffee station</div>
+    <div class="am">🚗 Private garage + parking</div>
+    <div class="am">📶 High-speed Wi-Fi</div>
+    <div class="am">🧺 Washer &amp; dryer</div>
+    <div class="am">❄️ A/C in every room</div>
+    <div class="am">🎾 Tennis court</div>
+    <div class="am">🛝 Children's playground</div>
+    <div class="am">🛗 Building elevator</div>
+  </div>
+</section>
+
+<!-- WHY DIRECT -->
+<section id="why" class="sec">
+  <span class="sec-label">Why Book Direct</span>
+  <h2 class="sec-title">The Direct Advantage</h2>
+  <div class="why">
+    <div class="wc"><div class="wn">18%</div><div class="wt">Savings vs. Airbnb</div><div class="wd">No platform fees. Our rates are exactly what you see — no surprise add-ons.</div></div>
+    <div class="wc"><div class="wn">24h</div><div class="wt">Direct Host Contact</div><div class="wd">Message the owner directly. Quick responses from someone who knows every corner.</div></div>
+    <div class="wc"><div class="wn">10%</div><div class="wt">Return Guest Discount</div><div class="wd">Stayed before? Book direct again and save 10% — our thank you for your loyalty.</div></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="sec" style="background:var(--navy)">
+  <span class="sec-label">El Tezal, Cabo</span>
+  <h2 class="sec-title">Perfectly Positioned</h2>
+  <p class="sec-desc">Elevated above the bay in El Tezal's gated community, close to everything — but blissfully quiet.</p>
+  <div class="loc">
+    <div>
+      <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem">Distances</p>
+      <ul class="dist-list">
+        <li class="di"><span class="p">Medano Beach</span><span class="d">8 min</span></li>
+        <li class="di"><span class="p">Cabo San Lucas Marina</span><span class="d">10 min</span></li>
+        <li class="di"><span class="p">Chileno Bay</span><span class="d">15 min</span></li>
+        <li class="di"><span class="p">Santa Maria Beach</span><span class="d">12 min</span></li>
+        <li class="di"><span class="p">Palmilla Beach</span><span class="d">20 min</span></li>
+        <li class="di"><span class="p">Los Cabos Airport (SJD)</span><span class="d">35 min</span></li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem">Host-Recommended Restaurants</p>
+      <div class="rests">
+        <div class="rest"><div class="rest-n">El Huerto Farm to Table</div><div class="rest-d">Fresh local ingredients, stunning setting</div></div>
+        <div class="rest"><div class="rest-n">Torote at Valle Del Sol</div><div class="rest-d">Best sunset views in Cabo</div></div>
+        <div class="rest"><div class="rest-n">Tacos El Tezal</div><div class="rest-d">Authentic street tacos, 2 min from the gate</div></div>
+        <div class="rest"><div class="rest-n">Delizioso Italian</div><div class="rest-d">Exceptional handmade pasta</div></div>
+        <div class="rest"><div class="rest-n">Cabo Grill Shop</div><div class="rest-d">Best breakfast burritos in town</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="sec">
+  <span class="sec-label">Guest Reviews</span>
+  <h2 class="sec-title">What Guests Say</h2>
+  <div class="revs">
+    <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"Absolutely stunning views from the terrace. We had margaritas every evening watching the sunset over the Arch — the hammock was everyone's favorite spot. Booking direct saved us nearly $500."</p><div class="rev-auth">Sarah &amp; James W. · February 2026</div></div>
+    <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"Second stay and we booked direct again. Saved over $400 and got a personal check-in call from the owner. The family bedroom slept all four kids perfectly. Already planning our third trip."</p><div class="rev-auth">The Martinez Family · January 2026</div></div>
+    <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"The kitchen is fully stocked and the views while you cook are unreal. We made breakfast every morning just to stand in front of those windows. The gated community felt incredibly safe."</p><div class="rev-auth">Caroline &amp; Mike R. · December 2025</div></div>
+    <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"Woke up every morning to the Arch framed perfectly through the bedroom window. The pool, tennis court, playground — we never had to leave. Pure paradise."</p><div class="rev-auth">David T. · November 2025</div></div>
+    <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"The owner responded within an hour to everything. Payment was smooth — so much better than a middleman. Tacos El Tezal right outside the gate was a game changer."</p><div class="rev-auth">Priya &amp; Raj M. · October 2025</div></div>
+    <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"We celebrated our anniversary here and the host left champagne and a welcome note. The sunset from the terrace on our last night had everyone in tears — the good kind."</p><div class="rev-auth">Lauren &amp; Chris K. · September 2025</div></div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section id="rules" class="sec" style="background:var(--navy)">
+  <span class="sec-label">House Rules</span>
+  <h2 class="sec-title">Good to Know</h2>
+  <div class="rules">
+    <div class="rule"><span class="rule-ico">🕓</span><div class="rule-t"><strong>Check-in / Out</strong>After 4:00 PM · By 11:00 AM</div></div>
+    <div class="rule"><span class="rule-ico">🪪</span><div class="rule-t"><strong>ID Required</strong>Government-issued ID for all guests</div></div>
+    <div class="rule"><span class="rule-ico">👥</span><div class="rule-t"><strong>Registered Guests Only</strong>Max 8 guests. All visitors must be registered.</div></div>
+    <div class="rule"><span class="rule-ico">🚭</span><div class="rule-t"><strong>No Smoking / No Drugs</strong>Strictly non-smoking property</div></div>
+    <div class="rule"><span class="rule-ico">🎉</span><div class="rule-t"><strong>Quiet After 10 PM</strong>No parties. Respect the community.</div></div>
+    <div class="rule"><span class="rule-ico">🐾</span><div class="rule-t"><strong>No Pets</strong>Pet-free property</div></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <span class="sec-label" style="color:var(--gold)">Ready to Book?</span>
+  <h2>Your Cabo Escape Awaits</h2>
+  <p>Submit a request and we'll confirm within 24 hours — no Airbnb fees, no hassle.</p>
+  <a href="#book" class="btn-gold">Submit a Booking Request</a>
+</div>
+
+<footer>
+  <div class="flogo">Casa de Corona</div>
+  <div class="finfo">El Tezal · Cabo San Lucas, BCS · México<br>contact@casadecorona.com · casadecorona.com</div>
+  <div class="flinks">
+    <a href="index.html">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="what-to-do.html">What To Do</a>
+    <a href="#book">Book Direct</a>
+    <a href="mailto:contact@casadecorona.com">Contact</a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

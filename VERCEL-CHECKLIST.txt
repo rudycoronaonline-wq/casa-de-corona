@@ -1,0 +1,34 @@
+WHY "casa-de-corona" DOESN'T SHOW IN VERCEL
+==========================================
+The project is only on your computer. It will NOT appear in your Vercel 
+dashboard until you deploy it once. Nobody can do that for you—you must 
+log in and run the deploy from your machine.
+
+DO THESE 3 THINGS (one time)
+=============================
+
+1. Double-click:  deploy-to-vercel.bat
+   (It's in this same folder: casa-de-corona)
+
+2. When your browser opens → sign in to Vercel (GitHub or email).
+   Then go back to the black window.
+
+3. When it asks "Set up and deploy?" type  Y  and press Enter.
+   Keep pressing Enter for any other questions.
+
+When it finishes you'll see a link like:
+   https://casa-de-corona-xxxx.vercel.app
+
+4. Open:  https://vercel.com/dashboard
+   Your project will now be in the list (might say "casa-de-corona" or 
+   the name you chose).
+
+IF YOU PREFER THE TERMINAL
+=========================
+Open PowerShell, then run:
+
+   cd "c:\Users\mrrud\OneDrive\Desktop\Website build\Ventanas-Website\casa-de-corona"
+   npx vercel login
+   npx vercel
+
+(Complete the browser login when it opens; then type Y when asked to set up and deploy.)
