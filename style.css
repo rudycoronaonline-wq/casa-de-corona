@@ -284,9 +284,35 @@ footer { background: #050e1c; padding: 2.8rem; display: flex; justify-content: s
 .inline-cta p { font-size: 0.9rem; color: var(--tl); line-height: 1.6; max-width: 480px; margin: 0; }
 
 /* ── RESPONSIVE (mobile only; desktop unchanged) ── */
+/* Mobile: match What To Do page header (nav + dropdown) */
 @media (max-width: 860px) {
+  nav {
+    padding: 1rem 2rem;
+    background: rgba(10,22,40,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,168,75,.15);
+  }
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  .mobile-nav {
+    top: 56px;
+    background: rgba(10,22,40,.98);
+    border-bottom: 1px solid rgba(200,168,75,.15);
+    padding: 1rem 2rem;
+    gap: 0.8rem;
+    z-index: 99;
+  }
+  .mobile-nav a {
+    padding: 0.5rem 0;
+    border-bottom: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+  .mobile-nav .nav-cta {
+    text-align: center;
+    padding: 0.7rem;
+    border-radius: 2px;
+  }
 }
 @media (max-width: 768px) {
   body { overflow-x: hidden; word-wrap: break-word; }
