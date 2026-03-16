@@ -354,11 +354,11 @@ footer { background: #050e1c; padding: 2.8rem; display: flex; justify-content: s
   .hero-body { padding: 0 1.5rem 3rem; }
   .book-grid, .rooms, .amen, .why, .loc, .revs, .rules { grid-template-columns: 1fr; }
   .frow { grid-template-columns: 1fr; }
-  /* Mobile gallery: single column, wider display, taller images (no click needed to see big) */
+  /* Mobile gallery: single column, full viewport width, taller images */
   .g2, .g3, .g4, .g2L { grid-template-columns: 1fr; }
-  .gfull { height: 320px; }
-  .gc.ht { height: 280px; }
-  .gc.hm { height: 220px; }
+  .gfull { height: 360px; }
+  .gc.ht { height: 300px; }
+  .gc.hm { height: 240px; }
   .dest-grid, .act-grid { grid-template-columns: 1fr; }
   .page-stats { gap: 2rem; }
   .inline-cta { flex-direction: column; }
@@ -366,7 +366,10 @@ footer { background: #050e1c; padding: 2.8rem; display: flex; justify-content: s
   .article { padding: 3rem 1.5rem; }
   footer { flex-direction: column; text-align: center; }
   .hub-hero-body, .page-hero-body { padding: 0 1.5rem 3rem; }
-  /* Mobile: gallery edge-to-edge, images fit */
+  /* Mobile: gallery section full-bleed; keep padding on title only */
+  #gallery.sec { padding-left: 0; padding-right: 0; }
+  #gallery.sec .sec-label,
+  #gallery.sec .sec-title { padding-left: 1.5rem; padding-right: 1.5rem; }
   .gw { padding-left: 0; padding-right: 0; max-width: 100%; }
   .cards-section-wrap { padding-left: 1rem; padding-right: 1rem; max-width: 100%; }
   .gfull img, .gc img { width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
@@ -381,12 +384,15 @@ footer { background: #050e1c; padding: 2.8rem; display: flex; justify-content: s
 }
 @media (max-width: 480px) {
   .sec { padding: 2.5rem 1rem; }
+  #gallery.sec { padding-left: 0; padding-right: 0; }
+  #gallery.sec .sec-label,
+  #gallery.sec .sec-title { padding-left: 1rem; padding-right: 1rem; }
   .hero-body, .hub-hero-body, .page-hero-body { padding: 0 1rem 2.5rem; }
   .article { padding: 2.5rem 1rem; }
   .g2, .g3, .g4, .g2L { grid-template-columns: 1fr; }
-  .gfull { height: 280px; }
-  .gc.ht { height: 240px; }
-  .gc.hm { height: 200px; }
+  .gfull { height: 300px; }
+  .gc.ht { height: 260px; }
+  .gc.hm { height: 220px; }
   .gw { padding-left: 0; padding-right: 0; }
   .cards-section-wrap { padding-left: 0.75rem; padding-right: 0.75rem; }
   .cta-band { padding: 2.5rem 1rem; }
