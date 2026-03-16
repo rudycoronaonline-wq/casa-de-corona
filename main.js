@@ -140,12 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
           form.style.display = 'none';
           if (thankYou) thankYou.style.display = 'block';
         } else {
-          throw new Error('Something went wrong. Please try again or email contact@casadecorona.com');
+          throw new Error('Something went wrong. Please try again or email casadecoronavr@gmail.com');
         }
       })
       .catch(function (err) {
         if (errEl) {
-          errEl.textContent = err.message || 'Could not send. Please email contact@casadecorona.com';
+          errEl.textContent = err.message || 'Could not send. Please email casadecoronavr@gmail.com';
           errEl.style.display = 'block';
         }
         if (btn) { btn.disabled = false; btn.textContent = 'Submit Booking Request →'; }
