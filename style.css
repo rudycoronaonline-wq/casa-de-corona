@@ -307,11 +307,17 @@ footer { background: #050e1c; padding: 2.8rem; display: flex; justify-content: s
     border-bottom: none;
     font-size: 0.8rem;
     letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+  .mobile-nav a:hover {
+    color: var(--gold-l);
   }
   .mobile-nav .nav-cta {
     text-align: center;
     padding: 0.7rem;
     border-radius: 2px;
+    color: var(--navy) !important;
+    background: var(--gold) !important;
   }
 }
 @media (max-width: 768px) {
