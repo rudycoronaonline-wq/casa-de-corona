@@ -3,11 +3,12 @@ function toggleNav() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
 
-// Close mobile nav when clicking a link
+// Close mobile nav when clicking a link (supports both .mobile-nav and .nav-mobile)
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.mobile-nav a').forEach(function (a) {
+  document.querySelectorAll('.mobile-nav a, .nav-mobile a').forEach(function (a) {
     a.addEventListener('click', function () {
-      document.getElementById('mobileNav').classList.remove('open');
+      var m = document.getElementById('mobileNav') || document.getElementById('navMobile');
+      if (m) m.classList.remove('open');
     });
   });
 });

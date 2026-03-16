@@ -10,13 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* Critical: page visible even if style.css does not load */
+/* Critical: page visible even if style.css does not load; nav controlled by style.css for consistent mobile header */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(10,22,40,.97); border-bottom: 1px solid rgba(200,168,75,.2); }
-.nav-logo { color: #C8A84B; font-size: 1.3rem; text-decoration: none; }
-.nav-links { display: flex; gap: 1.2rem; }
-.nav-links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: .7rem; text-transform: uppercase; }
 .hero { position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: flex-end; }
 .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-body { position: relative; z-index: 2; padding: 0 3rem 4rem; }
@@ -52,11 +48,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
     <a href="index.html#reviews">Reviews</a>
     <a href="index.html#book" class="nav-cta">Book Direct</a>
   </div>
-  <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+  <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div id="mobileNav" class="mobile-nav">
+<div class="nav-mobile" id="navMobile">
   <a href="index.html">Home</a>
   <a href="index.html#gallery">Gallery</a>
   <a href="index.html#bedrooms">Rooms</a>
