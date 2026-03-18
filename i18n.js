@@ -508,7 +508,20 @@ function initLanguage() {
   });
 }
 
+// Initialize language on DOM ready
 document.addEventListener('DOMContentLoaded', function () {
   initLanguage();
+  // Re-apply after short delays to catch any timing issues
   setTimeout(applyLanguage, 50);
+  setTimeout(applyLanguage, 150);
 });
+
+// Also apply on full page load as backup
+window.addEventListener('load', function () {
+  applyLanguage();
+});
+
+// Apply immediately if DOM is already ready
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setTimeout(initLanguage, 1);
+}

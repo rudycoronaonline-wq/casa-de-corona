@@ -326,6 +326,7 @@
 <script>
 function toggleNav(){document.getElementById('navMobile').classList.toggle('open')}
 document.querySelectorAll('.nav-mobile a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMobile').classList.remove('open')})});
+if(typeof applyLanguage==='function')applyLanguage();
 </script>
 </body>
 </html>
