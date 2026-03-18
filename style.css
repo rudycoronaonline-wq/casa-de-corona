@@ -41,6 +41,21 @@ nav {
 }
 .nav-cta:hover { background: var(--gold-l) !important; }
 
+/* Language switcher */
+.lang-switch {
+  display: flex; align-items: center; gap: 0;
+  margin-left: 0.5rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,.2);
+}
+.lang-switch [data-lang] {
+  background: none; border: none;
+  font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--tm); cursor: pointer; padding: 0.35rem 0.5rem;
+  font-family: inherit; transition: color 0.2s;
+}
+.lang-switch [data-lang]:hover { color: var(--tl); }
+.lang-switch [data-lang].active { color: var(--gold); font-weight: 600; }
+.lang-switch [data-lang].active:hover { color: var(--gold-l); }
+
 /* Hamburger (legacy) + What To Do–style nav-hamburger */
 .hamburger,
 .nav-hamburger {
@@ -75,6 +90,7 @@ nav {
 }
 .mobile-nav.open,
 .nav-mobile.open { display: flex; }
+.lang-switch-mobile { border-left: none; padding-left: 0; margin-left: 0; margin-top: 0.25rem; }
 
 /* ── SHARED ── */
 .save-strip {

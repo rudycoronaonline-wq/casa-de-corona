@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="i18n.js"></script>
 <style>
 /* Critical: page visible even if style.css does not load; nav controlled by style.css for consistent mobile header */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,56 +43,64 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 <nav>
   <a href="index.html" class="nav-logo">Casa de Corona</a>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#gallery">Gallery</a>
-    <a href="index.html#bedrooms">Rooms</a>
-    <a href="what-to-do.html">What To Do</a>
-    <a href="index.html#location">Location</a>
-    <a href="index.html#reviews">Reviews</a>
-    <a href="index.html#book" class="nav-cta">Book Direct</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a>
+    <a href="index.html#bedrooms" data-i18n="nav.rooms">Rooms</a>
+    <a href="what-to-do.html" data-i18n="nav.whatToDo">What To Do</a>
+    <a href="index.html#location" data-i18n="nav.location">Location</a>
+    <a href="index.html#reviews" data-i18n="nav.reviews">Reviews</a>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a href="index.html#book" class="nav-cta" data-i18n="nav.bookDirect">Book Direct</a>
   </div>
   <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="index.html">Home</a>
-  <a href="index.html#gallery">Gallery</a>
-  <a href="index.html#bedrooms">Rooms</a>
-  <a href="what-to-do.html">What To Do</a>
-  <a href="index.html#location">Location</a>
-  <a href="index.html#reviews">Reviews</a>
-  <a href="index.html#book" class="nav-cta">Book Direct</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a>
+  <a href="index.html#bedrooms" data-i18n="nav.rooms">Rooms</a>
+  <a href="what-to-do.html" data-i18n="nav.whatToDo">What To Do</a>
+  <a href="index.html#location" data-i18n="nav.location">Location</a>
+  <a href="index.html#reviews" data-i18n="nav.reviews">Reviews</a>
+  <div class="lang-switch lang-switch-mobile">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
+  <a href="index.html#book" class="nav-cta" data-i18n="nav.bookDirect">Book Direct</a>
 </div>
 
-<div class="save-strip">✦ Book direct and <strong>save up to 18%</strong> vs. Airbnb — no platform fees, no middleman ✦</div>
+<div class="save-strip" data-i18n-html="saveStrip">✦ Book direct and <strong>save up to 18%</strong> vs. Airbnb — no platform fees, no middleman ✦</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/terrace-sunset.jpg" alt="Casa de Corona terrace at sunset with hammock and ocean views" loading="eager">
   <div class="hero-ov"></div>
   <div class="hero-body">
-    <span class="eyebrow">El Tezal · Cabo San Lucas · Baja California Sur</span>
-    <h1>Three Bedrooms.<br>Ocean &amp; Arch Views.<br><em>All of Cabo at Your Door.</em></h1>
-    <p class="hero-sub">A private terrace with a hammock, margaritas at sunset, and a panoramic view of the Sea of Cortez — this is how Cabo was meant to be experienced.</p>
+    <span class="eyebrow" data-i18n="hero.eyebrow">El Tezal · Cabo San Lucas · Baja California Sur</span>
+    <h1 data-i18n-html="hero.h1">Three Bedrooms.<br>Ocean &amp; Arch Views.<br><em>All of Cabo at Your Door.</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">A private terrace with a hammock, margaritas at sunset, and a panoramic view of the Sea of Cortez — this is how Cabo was meant to be experienced.</p>
     <div class="stats">
-      <div class="stat"><span class="stat-v">3</span><span class="stat-l">Bedrooms</span></div>
-      <div class="stat"><span class="stat-v">2</span><span class="stat-l">Bathrooms</span></div>
-      <div class="stat"><span class="stat-v">8</span><span class="stat-l">Guests</span></div>
-      <div class="stat"><span class="stat-v">5★</span><span class="stat-l">Rating</span></div>
-      <div class="stat"><span class="stat-v">$0</span><span class="stat-l">Platform Fees</span></div>
+      <div class="stat"><span class="stat-v">3</span><span class="stat-l" data-i18n="hero.bedrooms">Bedrooms</span></div>
+      <div class="stat"><span class="stat-v">2</span><span class="stat-l" data-i18n="hero.bathrooms">Bathrooms</span></div>
+      <div class="stat"><span class="stat-v">8</span><span class="stat-l" data-i18n="hero.guests">Guests</span></div>
+      <div class="stat"><span class="stat-v">5★</span><span class="stat-l" data-i18n="hero.rating">Rating</span></div>
+      <div class="stat"><span class="stat-v">$0</span><span class="stat-l" data-i18n="hero.platformFees">Platform Fees</span></div>
     </div>
     <div class="hero-btns">
-      <a href="#book" class="btn-gold">Request to Book</a>
-      <a href="#gallery" class="btn-outline">View Gallery</a>
+      <a href="#book" class="btn-gold" data-i18n="hero.requestBook">Request to Book</a>
+      <a href="#gallery" class="btn-outline" data-i18n="hero.viewGallery">View Gallery</a>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery" class="sec" style="background:var(--navy)">
-  <span class="sec-label">The Property</span>
-  <h2 class="sec-title">Every View a Postcard</h2>
+  <span class="sec-label" data-i18n="sec.property">The Property</span>
+  <h2 class="sec-title" data-i18n="sec.galleryTitle">Every View a Postcard</h2>
   <div class="gw">
 
     <div class="gfull" onclick="openLightbox(0)">
@@ -157,56 +166,56 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 <section id="book" class="sec" style="background:var(--navy2)">
   <div class="book-grid">
     <div>
-      <span class="sec-label">Direct Booking</span>
-      <h2 class="sec-title">How It Works</h2>
-      <p class="sec-desc">No platform fees. No strangers handling your money. Just you, us, and the most direct path to your Cabo vacation.</p>
+      <span class="sec-label" data-i18n="sec.directBooking">Direct Booking</span>
+      <h2 class="sec-title" data-i18n="sec.howItWorks">How It Works</h2>
+      <p class="sec-desc" data-i18n="sec.howItWorksDesc">No platform fees. No strangers handling your money. Just you, us, and the most direct path to your Cabo vacation.</p>
       <div class="steps">
-        <div class="step"><div class="step-n">1</div><div class="step-t"><h4>Submit Your Request</h4><p>Fill out the form with your dates and group size. We'll confirm within 24 hours.</p></div></div>
-        <div class="step"><div class="step-n">2</div><div class="step-t"><h4>Receive Confirmation &amp; Invoice</h4><p>We reply with your total, a Stripe link for your 50% deposit, and your confirmation.</p></div></div>
-        <div class="step"><div class="step-n">3</div><div class="step-t"><h4>Balance Due 30 Days Before</h4><p>Remaining 50% collected 30 days prior. Check-in details sent the day before.</p></div></div>
-        <div class="step"><div class="step-n">4</div><div class="step-t"><h4>Cancellation</h4><p>Full refund if you cancel 30 or more days before check-in. After 30 days before check-in, no refund.</p></div></div>
+        <div class="step"><div class="step-n">1</div><div class="step-t"><h4 data-i18n="step1.title">Submit Your Request</h4><p data-i18n="step1.desc">Fill out the form with your dates and group size. We'll confirm within 24 hours.</p></div></div>
+        <div class="step"><div class="step-n">2</div><div class="step-t"><h4 data-i18n="step2.title">Receive Confirmation &amp; Invoice</h4><p data-i18n="step2.desc">We reply with your total, a Stripe link for your 50% deposit, and your confirmation.</p></div></div>
+        <div class="step"><div class="step-n">3</div><div class="step-t"><h4 data-i18n="step3.title">Balance Due 30 Days Before</h4><p data-i18n="step3.desc">Remaining 50% collected 30 days prior. Check-in details sent the day before.</p></div></div>
+        <div class="step"><div class="step-n">4</div><div class="step-t"><h4 data-i18n="step4.title">Cancellation</h4><p data-i18n="step4.desc">Full refund if you cancel 30 or more days before check-in. After 30 days before check-in, no refund.</p></div></div>
       </div>
     </div>
     <div>
       <div id="bookingThankYou" style="display:none;padding:2rem;background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.3);border-radius:6px;text-align:center">
-        <p style="font-size:1.25rem;color:var(--gold);margin-bottom:.5rem">Thank you!</p>
-        <p style="color:rgba(255,255,255,.9);margin:0">Your booking request has been sent. We'll confirm within 24 hours.</p>
+        <p style="font-size:1.25rem;color:var(--gold);margin-bottom:.5rem" data-i18n="booking.thankYou">Thank you!</p>
+        <p style="color:rgba(255,255,255,.9);margin:0" data-i18n="booking.thankYouDesc">Your booking request has been sent. We'll confirm within 24 hours.</p>
       </div>
       <form class="bform" id="bookingForm">
         <div class="frow">
-          <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="Maria" required></div>
-          <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Garcia" required></div>
+          <div class="fg"><label data-i18n="form.firstName">First Name</label><input type="text" name="first_name" placeholder="Maria" required></div>
+          <div class="fg"><label data-i18n="form.lastName">Last Name</label><input type="text" name="last_name" placeholder="Garcia" required></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="maria@example.com" required></div>
-          <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000"></div>
+          <div class="fg"><label data-i18n="form.email">Email</label><input type="email" name="email" placeholder="maria@example.com" required></div>
+          <div class="fg"><label data-i18n="form.phone">Phone</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000"></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Check-in Date</label><input type="date" name="check_in" id="checkin" required onchange="calcPrice()"></div>
-          <div class="fg"><label>Check-out Date</label><input type="date" name="check_out" id="checkout" required onchange="calcPrice()"></div>
+          <div class="fg"><label data-i18n="form.checkIn">Check-in Date</label><input type="date" name="check_in" id="checkin" required onchange="calcPrice()"></div>
+          <div class="fg"><label data-i18n="form.checkOut">Check-out Date</label><input type="date" name="check_out" id="checkout" required onchange="calcPrice()"></div>
         </div>
         <div class="fg">
-          <label>Number of Guests</label>
+          <label data-i18n="form.guests">Number of Guests</label>
           <select name="guests" id="guests" required>
-            <option value="">Select guests</option>
+            <option value="" data-i18n-placeholder="form.selectGuests">Select guests</option>
             <option>1</option><option>2</option><option>3</option><option>4</option>
             <option>5</option><option>6</option><option>7</option><option>8</option>
           </select>
         </div>
         <div class="price-box" id="priceBox" style="display:none">
-          <div class="pr"><span>Nightly rate</span><span class="pv" id="prNightly">—</span></div>
+          <div class="pr"><span data-i18n="form.nightlyRate">Nightly rate</span><span class="pv" id="prNightly">—</span></div>
           <div class="pr"><span id="prNights">Nights</span><span class="pv" id="prSubtotal">—</span></div>
           <div class="pr sav" id="discRow" style="display:none"><span id="discLabel"></span><span id="discAmt"></span></div>
-          <div class="pr"><span>Cleaning fee</span><span class="pv" id="prCleaning">—</span></div>
-          <div class="pr tot"><span>Total (before taxes)</span><span class="pv" id="prTotal">—</span></div>
-          <div class="pr"><span>50% deposit to confirm</span><span class="pv" id="prDeposit">—</span></div>
-          <div class="pr"><span>Refundable security deposit</span><span class="pv" id="prSecurity">—</span></div>
-          <div class="pr sav"><span>Savings vs. Airbnb (~18%)</span><span id="prSavings">—</span></div>
+          <div class="pr"><span data-i18n="form.cleaningFee">Cleaning fee</span><span class="pv" id="prCleaning">—</span></div>
+          <div class="pr tot"><span data-i18n="form.total">Total (before taxes)</span><span class="pv" id="prTotal">—</span></div>
+          <div class="pr"><span data-i18n="form.deposit">50% deposit to confirm</span><span class="pv" id="prDeposit">—</span></div>
+          <div class="pr"><span data-i18n="form.security">Refundable security deposit</span><span class="pv" id="prSecurity">—</span></div>
+          <div class="pr sav"><span data-i18n="form.savings">Savings vs. Airbnb (~18%)</span><span id="prSavings">—</span></div>
         </div>
         <div class="fg">
-          <label>How Did You Hear About Us?</label>
+          <label data-i18n="form.howHeard">How Did You Hear About Us?</label>
           <select name="how_heard">
-            <option value="">Select...</option>
+            <option value="" data-i18n-placeholder="form.select">Select...</option>
             <option>Airbnb / Previous Guest</option>
             <option>Friend / Family Referral</option>
             <option>Google Search</option>
@@ -214,23 +223,23 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
             <option>Other</option>
           </select>
         </div>
-        <div class="fg"><label>Special Requests</label><textarea name="special_requests" placeholder="Late check-in, celebrations, dietary needs..."></textarea></div>
+        <div class="fg"><label data-i18n="form.specialRequests">Special Requests</label><textarea name="special_requests" placeholder="Late check-in, celebrations, dietary needs..."></textarea></div>
         <div class="agr-row">
           <input type="checkbox" name="agreed" required>
-          <p class="agr">This is a <strong>booking request</strong>, not a confirmed reservation. We confirm availability within 24 hours. No payment until confirmation.</p>
+          <p class="agr" data-i18n-html="form.agree">This is a <strong>booking request</strong>, not a confirmed reservation. We confirm availability within 24 hours. No payment until confirmation.</p>
         </div>
-        <button type="submit" class="btn-gold" id="bookingSubmitBtn" style="width:100%;margin-top:.5rem">Submit Booking Request →</button>
+        <button type="submit" class="btn-gold" id="bookingSubmitBtn" style="width:100%;margin-top:.5rem" data-i18n="form.submit">Submit Booking Request →</button>
         <p id="bookingError" style="display:none;color:#e74c3c;margin-top:.75rem;font-size:.9rem"></p>
       </form>
-      <div class="cal-note">📅 Calendar synced with Airbnb. Questions? Email <strong>casadecoronavr@gmail.com</strong></div>
+      <div class="cal-note"><span data-i18n="form.calNote">📅 Calendar synced with Airbnb. Questions? Email</span> <strong>casadecoronavr@gmail.com</strong></div>
     </div>
   </div>
 </section>
 
 <!-- BEDROOMS -->
 <section id="bedrooms" class="sec" style="background:var(--navy2)">
-  <span class="sec-label">Accommodations</span>
-  <h2 class="sec-title">Three Distinct Bedrooms</h2>
+  <span class="sec-label" data-i18n="sec.accommodations">Accommodations</span>
+  <h2 class="sec-title" data-i18n="sec.threeBedrooms">Three Distinct Bedrooms</h2>
   <div class="rooms">
     <div class="room">
       <div class="room-img"><img onerror="this.onerror=null;this.src='images/placeholder.svg'" src="images/master-bedroom.jpg" alt="Master suite king bedroom" loading="lazy"></div>
@@ -270,8 +279,8 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 
 <!-- AMENITIES -->
 <section id="amenities" class="sec" style="background:var(--navy)">
-  <span class="sec-label">What's Included</span>
-  <h2 class="sec-title">Everything You Need</h2>
+  <span class="sec-label" data-i18n="sec.whatsIncluded">What's Included</span>
+  <h2 class="sec-title" data-i18n="sec.everythingYouNeed">Everything You Need</h2>
   <div class="amen">
     <div class="am">🌊 Ocean &amp; Arch views</div>
     <div class="am">🏊 Resort-style shared pool</div>
@@ -290,8 +299,8 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 
 <!-- WHY DIRECT -->
 <section id="why" class="sec">
-  <span class="sec-label">Why Book Direct</span>
-  <h2 class="sec-title">The Direct Advantage</h2>
+  <span class="sec-label" data-i18n="sec.whyDirect">Why Book Direct</span>
+  <h2 class="sec-title" data-i18n="sec.directAdvantage">The Direct Advantage</h2>
   <div class="why">
     <div class="wc"><div class="wn">18%</div><div class="wt">Savings vs. Airbnb</div><div class="wd">No platform fees. Our rates are exactly what you see — no surprise add-ons.</div></div>
     <div class="wc"><div class="wn">24h</div><div class="wt">Direct Host Contact</div><div class="wd">Message the owner directly. Quick responses from someone who knows every corner.</div></div>
@@ -301,12 +310,12 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 
 <!-- LOCATION -->
 <section id="location" class="sec" style="background:var(--navy)">
-  <span class="sec-label">El Tezal, Cabo</span>
-  <h2 class="sec-title">Perfectly Positioned</h2>
-  <p class="sec-desc">Elevated above the bay in El Tezal's gated community, close to everything — but blissfully quiet.</p>
+  <span class="sec-label" data-i18n="sec.elTezal">El Tezal, Cabo</span>
+  <h2 class="sec-title" data-i18n="sec.perfectlyPositioned">Perfectly Positioned</h2>
+  <p class="sec-desc" data-i18n="sec.locationDesc">Elevated above the bay in El Tezal's gated community, close to everything — but blissfully quiet.</p>
   <div class="loc">
     <div>
-      <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem">Distances</p>
+      <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem" data-i18n="sec.distances">Distances</p>
       <ul class="dist-list">
         <li class="di"><span class="p">Medano Beach</span><span class="d">8 min</span></li>
         <li class="di"><span class="p">Cabo San Lucas Marina</span><span class="d">10 min</span></li>
@@ -317,7 +326,7 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
       </ul>
     </div>
     <div>
-      <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem">Host-Recommended Restaurants</p>
+      <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem" data-i18n="sec.restaurants">Host-Recommended Restaurants</p>
       <div class="rests">
         <div class="rest"><div class="rest-n">El Huerto Farm to Table</div><div class="rest-d">Fresh local ingredients, stunning setting</div></div>
         <div class="rest"><div class="rest-n">Torote at Valle Del Sol</div><div class="rest-d">Best sunset views in Cabo</div></div>
@@ -331,8 +340,8 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 
 <!-- REVIEWS -->
 <section id="reviews" class="sec">
-  <span class="sec-label">Guest Reviews</span>
-  <h2 class="sec-title">What Guests Say</h2>
+  <span class="sec-label" data-i18n="sec.reviews">Guest Reviews</span>
+  <h2 class="sec-title" data-i18n="sec.whatGuestsSay">What Guests Say</h2>
   <div class="revs">
     <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"Absolutely stunning views from the terrace. We had margaritas every evening watching the sunset over the Arch — the hammock was everyone's favorite spot. Booking direct saved us nearly $500."</p><div class="rev-auth">Sarah &amp; James W. · February 2026</div></div>
     <div class="rev"><div class="rev-stars">★★★★★</div><p class="rev-text">"Second stay and we booked direct again. Saved over $400 and got a personal check-in call from the owner. The family bedroom slept all four kids perfectly. Already planning our third trip."</p><div class="rev-auth">The Martinez Family · January 2026</div></div>
@@ -345,8 +354,8 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 
 <!-- RULES -->
 <section id="rules" class="sec" style="background:var(--navy)">
-  <span class="sec-label">House Rules</span>
-  <h2 class="sec-title">Good to Know</h2>
+  <span class="sec-label" data-i18n="sec.houseRules">House Rules</span>
+  <h2 class="sec-title" data-i18n="sec.goodToKnow">Good to Know</h2>
   <div class="rules">
     <div class="rule"><span class="rule-ico">🕓</span><div class="rule-t"><strong>Check-in / Out</strong>After 4:00 PM · By 11:00 AM</div></div>
     <div class="rule"><span class="rule-ico">🪪</span><div class="rule-t"><strong>ID Required</strong>Government-issued ID for all guests</div></div>
@@ -360,8 +369,8 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 <!-- Six Destinations Worth Your Time (after Good to Know) -->
 <section id="explore" class="sec" style="background:#0e1f3a;padding-top:3rem;padding-bottom:5rem">
   <div class="cards-section-wrap">
-    <span class="sec-label">Explore the Region</span>
-    <h2 class="sec-title">Six Destinations Worth Your Time</h2>
+    <span class="sec-label" data-i18n="sec.exploreRegion">Explore the Region</span>
+    <h2 class="sec-title" data-i18n="sec.sixDestinations">Six Destinations Worth Your Time</h2>
     <div class="dest-grid">
       <a href="san-jose-del-cabo.html" class="dest-card">
         <div class="dest-card-img">
@@ -421,12 +430,12 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
       <a href="#book" class="dest-card" style="background:rgba(200,168,75,.08);border-color:rgba(200,168,75,.35)">
         <div class="dest-card-img" style="background:linear-gradient(135deg,#0e1f3a,#0a1628);display:flex;align-items:center;justify-content:center">
           <div style="text-align:center;padding:2rem">
-            <div style="font-size:2.5rem;color:#C8A84B;line-height:1;margin-bottom:.5rem">Book Direct</div>
-            <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)">Save up to 18%</div>
+            <div style="font-size:2.5rem;color:#C8A84B;line-height:1;margin-bottom:.5rem" data-i18n="explore.bookDirect">Book Direct</div>
+            <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)" data-i18n="explore.save18">Save up to 18%</div>
           </div>
         </div>
         <div class="dest-body">
-          <h3>Book Casa de Corona</h3>
+          <h3 data-i18n="explore.bookCasa">Book Casa de Corona</h3>
           <p>3 bedrooms, private terrace, ocean &amp; Arch views. No platform fees.</p>
           <span class="dest-link">Request to Book</span>
         </div>
@@ -450,7 +459,7 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
     <a href="index.html#gallery">Gallery</a>
     <a href="what-to-do.html">What To Do</a>
     <a href="index.html#book">Book Direct</a>
-    <a href="mailto:casadecoronavr@gmail.com">Contact</a>
+    <a href="mailto:casadecoronavr@gmail.com" data-i18n="footer.contact">Contact</a>
   </div>
 </footer>
 

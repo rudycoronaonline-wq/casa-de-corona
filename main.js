@@ -78,7 +78,7 @@ function calcPrice() {
   var disc = 0, discLabel = '';
   if (nights >= 7) {
     disc = Math.round(nights * RATE * 0.1);
-    discLabel = '10% weekly discount';
+    discLabel = (typeof I18N !== 'undefined' && I18N[currentLang] && I18N[currentLang]['disc.weekly']) || '10% weekly discount';
   }
 
   var sub = nights * RATE;
@@ -86,7 +86,8 @@ function calcPrice() {
 
   document.getElementById('priceBox').style.display = 'block';
   document.getElementById('prNightly').textContent  = '$' + RATE + '/night';
-  document.getElementById('prNights').textContent   = nights + ' night' + (nights !== 1 ? 's' : '');
+  var nightsLabel = (typeof I18N !== 'undefined' && I18N[currentLang]) ? (nights === 1 ? I18N[currentLang]['form.night'] : I18N[currentLang]['form.nightsPlural']) : (nights === 1 ? 'night' : 'nights');
+  document.getElementById('prNights').textContent   = nights + ' ' + nightsLabel;
   document.getElementById('prSubtotal').textContent = '$' + sub.toLocaleString();
   document.getElementById('prCleaning').textContent = '$' + CLEANING_FEE;
   document.getElementById('prTotal').textContent    = '$' + tot.toLocaleString();
@@ -107,6 +108,26 @@ function calcPrice() {
 // ── BOOKING SUBMIT (stays on page, no redirect) ──
 // Replace with your Formspree form ID from https://formspree.io (e.g. formspree.io/f/xyzabc → use xyzabc)
 var BOOKING_FORM_ENDPOINT = 'https://formspree.io/f/mvzwbopj';
+
+// Called when language changes so price box labels stay in current language
+function updatePriceLabels() {
+  var prNights = document.getElementById('prNights');
+  var discLabel = document.getElementById('discLabel');
+  var discRow = document.getElementById('discRow');
+  if (!prNights || !document.getElementById('checkin') || !document.getElementById('checkout')) return;
+  var ci = document.getElementById('checkin').value;
+  var co = document.getElementById('checkout').value;
+  if (ci && co) {
+    var nights = Math.round((new Date(co) - new Date(ci)) / 86400000);
+    if (nights >= 1) {
+      var nightsLabel = (typeof I18N !== 'undefined' && I18N[currentLang]) ? (nights === 1 ? I18N[currentLang]['form.night'] : I18N[currentLang]['form.nightsPlural']) : (nights === 1 ? 'night' : 'nights');
+      prNights.textContent = nights + ' ' + nightsLabel;
+    }
+  }
+  if (discRow && discRow.style.display === 'flex' && discLabel) {
+    discLabel.textContent = (typeof I18N !== 'undefined' && I18N[currentLang] && I18N[currentLang]['disc.weekly']) || '10% weekly discount';
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('bookingForm');

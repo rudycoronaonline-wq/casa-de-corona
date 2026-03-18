@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="i18n.js"></script>
 <style>
   :root{--navy:#0a1628;--navy2:#0e1f3a;--ocean:#1A6FD4;--gold:#C8A84B;--gold-light:#e8c87a;--white:#ffffff;--text-light:rgba(255,255,255,0.75);--text-muted:rgba(255,255,255,0.5)}
   *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -65,6 +66,10 @@
   .nav-links a{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-light);text-decoration:none;white-space:nowrap;transition:color .2s}
   .nav-links a:hover{color:var(--gold)}
   .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:.5rem 1rem;border-radius:2px;font-weight:500!important}
+  .lang-switch{display:flex;align-items:center;gap:0;margin-left:.5rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,.2)}
+  .lang-switch [data-lang]{background:none;border:none;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;padding:.35rem .5rem;font-family:inherit;transition:color .2s}
+  .lang-switch [data-lang]:hover{color:var(--text-light)}
+  .lang-switch [data-lang].active{color:var(--gold);font-weight:600}
   .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
   .nav-hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:2px}
   @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
@@ -77,26 +82,34 @@
 <nav>
   <a href="index.html" class="nav-logo">Casa de Corona</a>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#gallery">Gallery</a>
-    <a href="index.html#bedrooms">Rooms</a>
-    <a href="what-to-do.html">What To Do</a>
-    <a href="index.html#location">Location</a>
-    <a href="index.html#reviews">Reviews</a>
-    <a href="index.html#book" class="nav-cta">Book Direct</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a>
+    <a href="index.html#bedrooms" data-i18n="nav.rooms">Rooms</a>
+    <a href="what-to-do.html" data-i18n="nav.whatToDo">What To Do</a>
+    <a href="index.html#location" data-i18n="nav.location">Location</a>
+    <a href="index.html#reviews" data-i18n="nav.reviews">Reviews</a>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a href="index.html#book" class="nav-cta" data-i18n="nav.bookDirect">Book Direct</a>
   </div>
   <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="index.html">Home</a>
-  <a href="index.html#gallery">Gallery</a>
-  <a href="index.html#bedrooms">Rooms</a>
-  <a href="what-to-do.html">What To Do</a>
-  <a href="index.html#location">Location</a>
-  <a href="index.html#reviews">Reviews</a>
-  <a href="index.html#book" class="nav-cta">Book Direct</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a>
+  <a href="index.html#bedrooms" data-i18n="nav.rooms">Rooms</a>
+  <a href="what-to-do.html" data-i18n="nav.whatToDo">What To Do</a>
+  <a href="index.html#location" data-i18n="nav.location">Location</a>
+  <a href="index.html#reviews" data-i18n="nav.reviews">Reviews</a>
+  <div class="lang-switch lang-switch-mobile">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
+  <a href="index.html#book" class="nav-cta" data-i18n="nav.bookDirect">Book Direct</a>
 </div>
 
 <section class="hub-hero">
@@ -309,6 +322,7 @@
   </div>
 </footer>
 
+<script src="main.js"></script>
 <script>
 function toggleNav(){document.getElementById('navMobile').classList.toggle('open')}
 document.querySelectorAll('.nav-mobile a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMobile').classList.remove('open')})});
