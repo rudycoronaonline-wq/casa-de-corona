@@ -461,6 +461,9 @@ var I18N = {
 };
 
 var currentLang = localStorage.getItem('casadecorona-lang') || 'en';
+if (typeof document !== 'undefined' && document.documentElement) {
+  document.documentElement.lang = currentLang;
+}
 
 function setLang(lang) {
   if (!I18N[lang]) return;
@@ -505,4 +508,7 @@ function initLanguage() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initLanguage);
+document.addEventListener('DOMContentLoaded', function () {
+  initLanguage();
+  setTimeout(applyLanguage, 50);
+});
