@@ -11,7 +11,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="i18n.js"></script>
 <style>
   :root{--navy:#0a1628;--navy2:#0e1f3a;--ocean:#1A6FD4;--gold:#C8A84B;--gold-light:#e8c87a;--white:#ffffff;--text-light:rgba(255,255,255,0.75);--text-muted:rgba(255,255,255,0.5)}
   *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -322,11 +321,12 @@
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 <script>
 function toggleNav(){document.getElementById('navMobile').classList.toggle('open')}
 document.querySelectorAll('.nav-mobile a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMobile').classList.remove('open')})});
-if(typeof applyLanguage==='function')applyLanguage();
+initLanguage();
 </script>
 </body>
 </html>
