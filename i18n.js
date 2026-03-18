@@ -170,6 +170,7 @@ var I18N = {
     'dest.backToWhatToDo': 'Back to What To Do',
     'dest.stayAtCasa': 'Stay at Casa de Corona →',
     'dest.bookYourStay': 'Book Your Stay',
+    'dest.fromCasa': 'from Casa de Corona',
     'w2d.ctaLabel': 'Stay at Casa de Corona',
     'w2d.ctaTitle': 'The Perfect Home Base for All of It',
     'w2d.ctaDesc': 'Casa de Corona — 3 bedrooms, ocean views, private terrace, 10 minutes from Cabo\'s marina. Book direct and save up to 18%.',
@@ -367,6 +368,7 @@ var I18N = {
     'dest.backToWhatToDo': 'Volver a Qué Hacer',
     'dest.stayAtCasa': 'Hospedarse en Casa de Corona →',
     'dest.bookYourStay': 'Reservar tu estancia',
+    'dest.fromCasa': 'desde Casa de Corona',
     'w2d.ctaLabel': 'Hospedarse en Casa de Corona',
     'w2d.ctaTitle': 'La base perfecta para todo',
     'w2d.ctaDesc': 'Casa de Corona — 3 habitaciones, vistas al mar, terraza privada, a 10 min de la marina. Reserva directo y ahorra hasta 18%.',
@@ -428,7 +430,8 @@ function applyLanguage() {
   if (typeof updatePriceLabels === 'function') updatePriceLabels();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function initLanguage() {
+  currentLang = localStorage.getItem('casadecorona-lang') || 'en';
   document.documentElement.lang = currentLang;
   applyLanguage();
   document.querySelectorAll('.lang-switch [data-lang]').forEach(function (btn) {
@@ -438,4 +441,6 @@ document.addEventListener('DOMContentLoaded', function () {
       setLang(btn.getAttribute('data-lang'));
     });
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', initLanguage);
