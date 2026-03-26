@@ -40,6 +40,9 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 .popular-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.25rem; }
 .popular-link { background: rgba(255,255,255,.04); border: 1px solid rgba(200,168,75,.2); border-radius: 4px; padding: 1rem 1.1rem; color: #fff; text-decoration: none; font-size: .95rem; line-height: 1.6; display: block; transition: transform .2s, border-color .2s; }
 .popular-link:hover { border-color: rgba(200,168,75,.5); transform: translateY(-2px); }
+.popular-intro { margin: .65rem auto 0; max-width: 760px; font-size: .95rem; color: rgba(255,255,255,.75); line-height: 1.8; font-weight: 300; }
+.popular-card-title { font-weight: 600; margin-bottom: .35rem; line-height: 1.3; }
+.popular-card-desc { font-size: .78rem; color: rgba(255,255,255,.75); line-height: 1.7; }
 @media (max-width: 768px) { .dest-grid { grid-template-columns: 1fr; } .popular-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -456,15 +459,30 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
   </div>
 </section>
 
-<!-- Explore More Cabo Stay Options (priority SEO landing pages) -->
+<!-- Explore More Cabo Stay Options -->
 <section id="popular-stays" class="sec" style="background:var(--navy2);padding-top:2.2rem;padding-bottom:3rem">
-  <span class="sec-label" data-i18n="home.popularLabel">Explore More Cabo Stay Options</span>
-  <h2 class="sec-title" data-i18n="home.popularTitle">Explore More Cabo Stay Options</h2>
+  <span class="sec-label">Explore More Cabo Stay Options</span>
+  <h2 class="sec-title">Explore More Cabo Stay Options</h2>
+  <p class="popular-intro">
+    Looking for the right fit for your Cabo trip? Explore more ways to stay at Casa de Corona, whether you want an ocean-view vacation rental, a family-friendly stay, or a quieter location in El Tezal close to beaches and the marina.
+  </p>
   <div class="popular-grid" role="list" aria-label="Explore More Cabo Stay Options">
-    <a class="popular-link" role="listitem" href="/cabo-san-lucas-vacation-rental" data-i18n="seo.caboSanLucasVacationRental">Cabo San Lucas vacation rental</a>
-    <a class="popular-link" role="listitem" href="/family-vacation-rental-cabo-san-lucas" data-i18n="seo.familyVacationRental">family-friendly vacation rental in Cabo San Lucas</a>
-    <a class="popular-link" role="listitem" href="/ocean-view-vacation-rental-cabo" data-i18n="seo.oceanViewVacationRental">ocean-view vacation rental in Cabo</a>
-    <a class="popular-link" role="listitem" href="/el-tezal-vacation-rental" data-i18n="seo.elTezalVacationRental">vacation rental in El Tezal</a>
+    <a class="popular-link" role="listitem" href="/cabo-san-lucas-vacation-rental" aria-label="Cabo San Lucas Vacation Rental">
+      <div class="popular-card-title">Cabo San Lucas Vacation Rental</div>
+      <div class="popular-card-desc">Explore our main Cabo San Lucas vacation rental page for an overview of the property, location, amenities, and direct-booking advantages.</div>
+    </a>
+    <a class="popular-link" role="listitem" href="/family-vacation-rental-cabo-san-lucas" aria-label="Family-Friendly Vacation Rental in Cabo San Lucas">
+      <div class="popular-card-title">Family-Friendly Vacation Rental in Cabo San Lucas</div>
+      <div class="popular-card-desc">See why Casa de Corona is a great fit for families and small groups looking for more space, comfort, and convenience than a hotel.</div>
+    </a>
+    <a class="popular-link" role="listitem" href="/ocean-view-vacation-rental-cabo" aria-label="Ocean View Vacation Rental in Cabo">
+      <div class="popular-card-title">Ocean View Vacation Rental in Cabo</div>
+      <div class="popular-card-desc">Learn more about the ocean and Arch views that make Casa de Corona feel like a true Cabo getaway.</div>
+    </a>
+    <a class="popular-link" role="listitem" href="/el-tezal-vacation-rental" aria-label="Vacation Rental in El Tezal">
+      <div class="popular-card-title">Vacation Rental in El Tezal</div>
+      <div class="popular-card-desc">Find out why El Tezal is one of the best areas to stay for travelers who want a quieter Cabo experience with easy access to top attractions.</div>
+    </a>
   </div>
 </section>
 
@@ -524,15 +542,20 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
     <a href="/what-to-do" data-i18n="footer.whatToDo">What To Do</a>
     <a href="/#book" data-i18n="footer.bookDirect">Book Direct</a>
     <a href="mailto:casadecoronavr@gmail.com" data-i18n="footer.contact">Contact</a>
-    <span style="font-size:.72rem;color:var(--tm);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap" data-i18n="home.footerSeoLabel">Cabo Vacation Rental Guides</span>
-    <a href="/cabo-san-lucas-vacation-rental" data-i18n="seo.caboSanLucasVacationRental">Cabo San Lucas Vacation Rental</a>
-    <a href="/short-term-rental-cabo-san-lucas" data-i18n="seo.shortTermRentalCaboSanLucas">Short-Term Rental in Cabo San Lucas</a>
-    <a href="/family-vacation-rental-cabo-san-lucas" data-i18n="seo.familyVacationRental">Family Vacation Rental (Sleeps 8)</a>
-    <a href="/ocean-view-vacation-rental-cabo" data-i18n="seo.oceanViewVacationRental">Ocean View Vacation Rental</a>
-    <a href="/el-tezal-vacation-rental" data-i18n="seo.elTezalVacationRental">El Tezal Vacation Rental</a>
-    <a href="/direct-booking-cabo-san-lucas" data-i18n="seo.directBookingCaboSanLucas">Direct Booking Savings</a>
-    <a href="/condo-rental-cabo-san-lucas" data-i18n="seo.condoRentalCaboSanLucas">3-Bedroom Condo Rental</a>
-    <a href="/vacation-rental-near-medano-beach" data-i18n="seo.vacationRentalNearMedano">Vacation Rental Near Medano Beach</a>
+    <div style="flex-basis:100%;display:flex;flex-direction:column;gap:.45rem;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--gold);">Cabo Vacation Rental Guides</div>
+      <div style="font-size:.75rem;color:var(--tm);line-height:1.8;">Explore more ways to stay at Casa de Corona in Cabo San Lucas.</div>
+      <div style="display:flex;gap:1.4rem;flex-wrap:wrap;">
+        <a href="/cabo-san-lucas-vacation-rental" style="text-transform:none;">Cabo San Lucas Vacation Rental</a>
+        <a href="/short-term-rental-cabo-san-lucas" style="text-transform:none;">Short-Term Rental Cabo San Lucas</a>
+        <a href="/family-vacation-rental-cabo-san-lucas" style="text-transform:none;">Family Vacation Rental Cabo San Lucas</a>
+        <a href="/ocean-view-vacation-rental-cabo" style="text-transform:none;">Ocean View Vacation Rental Cabo</a>
+        <a href="/el-tezal-vacation-rental" style="text-transform:none;">El Tezal Vacation Rental</a>
+        <a href="/direct-booking-cabo-san-lucas" style="text-transform:none;">Direct Booking Cabo San Lucas</a>
+        <a href="/condo-rental-cabo-san-lucas" style="text-transform:none;">Condo Rental Cabo San Lucas</a>
+        <a href="/vacation-rental-near-medano-beach" style="text-transform:none;">Vacation Rental Near Medano Beach</a>
+      </div>
+    </div>
   </div>
 </footer>
 
