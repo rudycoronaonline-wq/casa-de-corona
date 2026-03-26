@@ -1,29 +1,29 @@
 Add your optimized photos here (WebP or JPG, ~80% quality, max 1200px recommended).
 
-Required filenames for the site:
+Required filenames for the site (SEO-friendly names; match these in HTML):
 
 Home / Gallery:
-- terrace-sunset.jpg
-- terrace-margaritas.jpg
-- pool-aerial.jpg
-- living-room.jpg
-- master-bedroom.jpg
-- dining-room.jpg
-- kitchen.jpg
-- breakfast-table.jpg
-- sunset.jpg
-- pool-birdseye.jpg
-- building-sunset.jpg
-- terrace-day.jpg
-- playground.jpg
-- hallway.jpg
-- desert-bedroom.jpg
-- family-bedroom.jpg
-- master-bath.jpg
-- bathroom-2.jpg
-- coffee-station.jpg
-- laundry.jpg
-- complex-aerial.jpg
+- cabo-san-lucas-vacation-rental-terrace-sunset.jpg
+- cabo-san-lucas-vacation-rental-terrace-margaritas.jpg
+- el-tezal-vacation-rental-shared-pool-arch-views.jpg
+- el-tezal-condo-ocean-view-living-room.jpg
+- cabo-vacation-rental-master-suite-bedroom.jpg
+- cabo-san-lucas-vacation-rental-dining-arch-views.jpg
+- cabo-vacation-rental-kitchen-ocean-view.jpg
+- cabo-vacation-rental-terrace-outdoor-dining.jpg
+- cabo-san-lucas-sunset-from-terrace-casa-de-corona.jpg
+- el-tezal-resort-pool-tennis-aerial.jpg
+- casa-de-corona-el-tezal-building-sunset.jpg
+- el-tezal-condo-ocean-view-terrace.jpg
+- el-tezal-vacation-rental-playground-tennis.jpg
+- casa-de-corona-condo-hallway-elevator.jpg
+- cabo-vacation-rental-desert-bedroom.jpg
+- family-vacation-rental-cabo-bedroom.jpg
+- cabo-vacation-rental-master-bathroom.jpg
+- cabo-vacation-rental-shared-bathroom.jpg
+- cabo-vacation-rental-coffee-station.jpg
+- cabo-vacation-rental-washer-dryer.jpg
+- el-tezal-gated-community-cabo-arch-aerial.jpg
 
 What To Do hub & destination pages:
 - cabo-bay.jpg
