@@ -37,7 +37,10 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
 .faq-item { background: rgba(255,255,255,.04); border: 1px solid rgba(200,168,75,.2); border-radius: 4px; padding: 1.2rem 1.3rem; }
 .faq-item h3 { font-size: 1.1rem; font-weight: 400; line-height: 1.4; color: #fff; margin-bottom: .55rem; }
 .faq-item p { font-size: .92rem; color: rgba(255,255,255,.8); line-height: 1.7; margin: 0; }
-@media (max-width: 768px) { .dest-grid { grid-template-columns: 1fr; } }
+.popular-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.25rem; }
+.popular-link { background: rgba(255,255,255,.04); border: 1px solid rgba(200,168,75,.2); border-radius: 4px; padding: 1rem 1.1rem; color: #fff; text-decoration: none; font-size: .95rem; line-height: 1.6; display: block; transition: transform .2s, border-color .2s; }
+.popular-link:hover { border-color: rgba(200,168,75,.5); transform: translateY(-2px); }
+@media (max-width: 768px) { .dest-grid { grid-template-columns: 1fr; } .popular-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -327,6 +330,11 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
         <li class="di"><span class="p">Palmilla Beach</span><span class="d">20 min</span></li>
         <li class="di"><span class="p">Los Cabos Airport (SJD)</span><span class="d">35 min</span></li>
       </ul>
+      <p class="sec-desc" style="margin-top:1rem;max-width:560px">
+        Want to match your stay to your itinerary? Explore a <a href="/family-vacation-rental-cabo-san-lucas" data-i18n="seo.familyVacationRental">Family Vacation Rental</a>,
+        a <a href="/ocean-view-vacation-rental-cabo" data-i18n="seo.oceanViewVacationRental">Ocean View Vacation Rental</a>,
+        or <a href="/direct-booking-cabo-san-lucas" data-i18n="seo.directBookingCaboSanLucas">Direct Booking Savings</a>.
+      </p>
     </div>
     <div>
       <p style="font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem" data-i18n="sec.restaurants">Host-Recommended Restaurants</p>
@@ -447,6 +455,18 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
   </div>
 </section>
 
+<!-- Popular Cabo Stay Options (SEO landing pages) -->
+<section id="popular-stays" class="sec" style="background:var(--navy2);padding-top:2.2rem;padding-bottom:3rem">
+  <span class="sec-label" data-i18n="home.popularLabel">Popular Cabo Stay Options</span>
+  <h2 class="sec-title" data-i18n="home.popularTitle">Choose the stay type that fits your trip</h2>
+  <div class="popular-grid" role="list" aria-label="Popular Cabo Stay Options">
+    <a class="popular-link" role="listitem" href="/cabo-san-lucas-vacation-rental" data-i18n="seo.caboSanLucasVacationRental">Cabo San Lucas Vacation Rental</a>
+    <a class="popular-link" role="listitem" href="/short-term-rental-cabo-san-lucas" data-i18n="seo.shortTermRentalCaboSanLucas">Short-Term Rental in Cabo San Lucas</a>
+    <a class="popular-link" role="listitem" href="/family-vacation-rental-cabo-san-lucas" data-i18n="seo.familyVacationRental">Family Vacation Rental (Sleeps 8)</a>
+    <a class="popular-link" role="listitem" href="/direct-booking-cabo-san-lucas" data-i18n="seo.directBookingCaboSanLucas">Direct Booking Savings</a>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" class="sec" style="background:var(--navy2)">
   <span class="sec-label">Frequently Asked Questions</span>
@@ -503,6 +523,15 @@ body { background: #0a1628; color: #fff; font-family: 'DM Sans', sans-serif; }
     <a href="/what-to-do" data-i18n="footer.whatToDo">What To Do</a>
     <a href="/#book" data-i18n="footer.bookDirect">Book Direct</a>
     <a href="mailto:casadecoronavr@gmail.com" data-i18n="footer.contact">Contact</a>
+    <span style="font-size:.72rem;color:var(--tm);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap" data-i18n="home.footerSeoLabel">Popular Cabo Stay Options</span>
+    <a href="/cabo-san-lucas-vacation-rental" data-i18n="seo.caboSanLucasVacationRental">Cabo San Lucas Vacation Rental</a>
+    <a href="/short-term-rental-cabo-san-lucas" data-i18n="seo.shortTermRentalCaboSanLucas">Short-Term Rental in Cabo San Lucas</a>
+    <a href="/family-vacation-rental-cabo-san-lucas" data-i18n="seo.familyVacationRental">Family Vacation Rental (Sleeps 8)</a>
+    <a href="/ocean-view-vacation-rental-cabo" data-i18n="seo.oceanViewVacationRental">Ocean View Vacation Rental</a>
+    <a href="/el-tezal-vacation-rental" data-i18n="seo.elTezalVacationRental">El Tezal Vacation Rental</a>
+    <a href="/direct-booking-cabo-san-lucas" data-i18n="seo.directBookingCaboSanLucas">Direct Booking Savings</a>
+    <a href="/condo-rental-cabo-san-lucas" data-i18n="seo.condoRentalCaboSanLucas">3-Bedroom Condo Rental</a>
+    <a href="/vacation-rental-near-medano-beach" data-i18n="seo.vacationRentalNearMedano">Vacation Rental Near Medano Beach</a>
   </div>
 </footer>
 

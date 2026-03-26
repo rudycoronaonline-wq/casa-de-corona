@@ -228,6 +228,19 @@ var I18N = {
     'w2d.exploreBalandra': 'Explore Balandra',
     'w2d.tecoloteDesc': 'Unspoiled Sea of Cortez — windsurfing, caguamanta soup, views to Isla Espíritu Santo.',
     'w2d.exploreTecolote': 'Explore El Tecolote',
+
+    // SEO landing pages (internal linking / crawlability)
+    'home.popularLabel': 'Popular Cabo Stay Options',
+    'home.popularTitle': 'Choose the stay type that fits your trip',
+    'home.footerSeoLabel': 'Popular Cabo Stay Options',
+    'seo.caboSanLucasVacationRental': 'Cabo San Lucas Vacation Rental',
+    'seo.shortTermRentalCaboSanLucas': 'Short-Term Rental in Cabo San Lucas',
+    'seo.familyVacationRental': 'Family Vacation Rental (Sleeps 8)',
+    'seo.oceanViewVacationRental': 'Ocean View Vacation Rental',
+    'seo.elTezalVacationRental': 'El Tezal Vacation Rental',
+    'seo.directBookingCaboSanLucas': 'Direct Booking Savings',
+    'seo.condoRentalCaboSanLucas': '3-Bedroom Condo Rental',
+    'seo.vacationRentalNearMedano': 'Vacation Rental Near Medano Beach',
     // Cabo San Lucas page
     'cabo.heroSubtitle': 'Where the Sea of Cortez Meets the Pacific',
     'cabo.heroDesc': 'Iconic rock arches at Land\'s End, Medano Beach, world-class sport fishing, and a buzzing marina. 10 minutes from Casa de Corona — the heart of Los Cabos.',
@@ -882,6 +895,19 @@ var I18N = {
     'w2d.exploreBalandra': 'Explorar Balandra',
     'w2d.tecoloteDesc': 'Mar de Cortés sin igual — windsurf, sopa de caguamanta, vistas a Isla Espíritu Santo.',
     'w2d.exploreTecolote': 'Explorar El Tecolote',
+
+    // SEO landing pages (internal linking / crawlability)
+    'home.popularLabel': 'Opciones populares de estancia en Cabo',
+    'home.popularTitle': 'Elige el tipo de estancia ideal para tu viaje',
+    'home.footerSeoLabel': 'Opciones populares de estancia en Cabo',
+    'seo.caboSanLucasVacationRental': 'Renta vacacional en Cabo San Lucas',
+    'seo.shortTermRentalCaboSanLucas': 'Renta a corto plazo en Cabo San Lucas',
+    'seo.familyVacationRental': 'Renta familiar (hasta 8 huéspedes)',
+    'seo.oceanViewVacationRental': 'Renta con vista al océano',
+    'seo.elTezalVacationRental': 'Renta vacacional en El Tezal',
+    'seo.directBookingCaboSanLucas': 'Ahorra reservando directo',
+    'seo.condoRentalCaboSanLucas': 'Condominio de 3 recámaras',
+    'seo.vacationRentalNearMedano': 'Renta cerca de Playa Medano',
     // Cabo San Lucas page
     'cabo.heroSubtitle': 'Donde el Mar de Cortés se encuentra con el Pacífico',
     'cabo.heroDesc': 'Los icónicos arcos de Land\'s End, Playa Medano, pesca deportiva de clase mundial y una marina vibrante. A 10 minutos de Casa de Corona — el corazón de Los Cabos.',
