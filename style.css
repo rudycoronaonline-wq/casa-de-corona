@@ -8,11 +8,32 @@
   --white:  #ffffff;
   --tl: rgba(255,255,255,0.75);
   --tm: rgba(255,255,255,0.5);
+  /* Inline text links on navy (readable vs. default browser purple) */
+  --link-baby-blue: #a3d8ff;
+  --link-baby-blue-hover: #c8eaff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { background: var(--navy); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+/* Body-copy links (not nav, footer row, buttons, or card blocks) */
+.article p a,
+.article li a,
+.sec p a,
+.popular-intro a,
+.inline-cta p a {
+  color: var(--link-baby-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.article p a:hover,
+.article li a:hover,
+.sec p a:hover,
+.popular-intro a:hover,
+.inline-cta p a:hover {
+  color: var(--link-baby-blue-hover);
+}
 
 /* ── NAV ── */
 nav {
