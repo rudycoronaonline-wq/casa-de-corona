@@ -177,16 +177,10 @@ nav {
 .hero-btns { display: flex; gap: 1rem; align-items: center; }
 
 /* ── GALLERY ── */
-/* Match .gw width to typical photo width (800px) so JPEGs are not upscaled past native resolution */
-.gw { max-width: 800px; margin: 0 auto; }
+.gw { max-width: 1100px; margin: 0 auto; }
 .gfull { position: relative; width: 100%; height: 500px; border-radius: 3px; overflow: hidden; cursor: pointer; margin-bottom: 0.7rem; }
-.gfull img {
-  width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; display: block;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-.gfull:hover img { transform: translateZ(0) scale(1.015); }
+.gfull img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; display: block; }
+.gfull:hover img { transform: scale(1.02); }
 .grow { display: grid; gap: 0.7rem; margin-bottom: 0.7rem; }
 .g2  { grid-template-columns: 1fr 1fr; }
 .g3  { grid-template-columns: repeat(3,1fr); }
@@ -195,13 +189,8 @@ nav {
 .gc { border-radius: 3px; overflow: hidden; position: relative; cursor: pointer; }
 .gc.ht { height: 300px; }
 .gc.hm { height: 210px; }
-.gc img {
-  width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-.gc:hover img { transform: translateZ(0) scale(1.02); }
+.gc img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s; }
+.gc:hover img { transform: scale(1.04); }
 .glbl {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: linear-gradient(transparent, rgba(10,22,40,.85));
@@ -213,8 +202,7 @@ nav {
 /* ── LIGHTBOX ── */
 .lb { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(5,10,20,.96); align-items: center; justify-content: center; }
 .lb.on { display: flex; }
-/* max-width set in JS from naturalWidth so small photos are not upscaled in the lightbox */
-.lb img { max-width: min(90vw, 100%); max-height: 88vh; width: auto; height: auto; object-fit: contain; border-radius: 2px; }
+.lb img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 2px; }
 .lb-x { position: absolute; top: 1.5rem; right: 2rem; font-size: 2.5rem; color: rgba(255,255,255,.55); cursor: pointer; line-height: 1; z-index: 1000; }
 .lb-x:hover { color: #fff; }
 .lb-p, .lb-n { position: absolute; top: 50%; transform: translateY(-50%); font-size: 3rem; color: rgba(255,255,255,.4); cursor: pointer; padding: 1rem; z-index: 1000; line-height: 1; user-select: none; }

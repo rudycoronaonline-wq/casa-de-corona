@@ -38,32 +38,12 @@ function openLightbox(i) {
   document.body.style.overflow = 'hidden';
 }
 
-function applyLightboxImageSize() {
-  var lbImg = document.getElementById('lbImg');
-  if (!lbImg || !lbImg.naturalWidth) return;
-  var maxW = Math.min(window.innerWidth * 0.9, lbImg.naturalWidth);
-  lbImg.style.maxWidth = maxW + 'px';
-}
-
 function showLightbox() {
   if (!lbData[lbIdx]) return;
-  var lbImg = document.getElementById('lbImg');
-  lbImg.onload = function () {
-    applyLightboxImageSize();
-  };
-  lbImg.src = lbData[lbIdx].s;
-  if (lbImg.complete && lbImg.naturalWidth) {
-    applyLightboxImageSize();
-  }
+  document.getElementById('lbImg').src  = lbData[lbIdx].s;
   document.getElementById('lbCap').textContent = lbData[lbIdx].c;
-  document.getElementById('lbNum').textContent = (lbIdx + 1) + ' / ' + lbData.length;
+  document.getElementById('lbNum').textContent  = (lbIdx + 1) + ' / ' + lbData.length;
 }
-
-window.addEventListener('resize', function () {
-  var lb = document.getElementById('lightbox');
-  if (!lb || !lb.classList.contains('on')) return;
-  applyLightboxImageSize();
-});
 
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('on');
